@@ -34,7 +34,7 @@ conektaApi.createToken({
 ## iOS Manual Installation (if you did not use `react-native link`)
 [Please see: Linking Libraries iOS](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
 
-Library folder: `your-project/node_modules/react-native-conekta/RNConekta`
+Library folder: `your-project/node_modules/react-native-conekta2/RNConekta`
 
 ## Android Manual Installation (if you did not use `react-native link`)
 In `android/settings.gradle`
