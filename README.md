@@ -5,8 +5,7 @@
 ## Supported React Native Versions
 | Component Version     | RN Versions    | README     |
 |-----------------------|---------------|------------|
-| **1.0.4**          | **<= 0.16**   | [Open](https://github.com/zo0r/react-native-conekta/blob/0dae778f409123836df4ec0f6de484598658b11e/README.md)   |
-| **>= 2.0.0**          | **>= 0.30**   | [Open](https://github.com/zo0r/react-native-conekta/blob/master/README.md)   |
+| **>= 2.0.0**          | **>= 0.50**   | [Open](https://github.com/edgarlopez/react-native-conekta/blob/master/README.md)   |
 
 ## Installation
 `npm install --save react-native-conekta`
@@ -21,7 +20,7 @@ conektaApi.setPublicKey( 'YOUR_PUBLIC_KEY' );
 
 conektaApi.createToken({
   cardNumber: '4242424242424242',
-  name: 'Manolo Virolo',
+  name: 'Edgar Lopez',
   cvc: '111',
   expMonth: '11',
   expYear: '21',
