@@ -42,8 +42,8 @@ In `android/settings.gradle`
 ```gradle
 ...
 
-include ':react-native-conekta'
-project(':react-native-conekta').projectDir = file('../node_modules/react-native-conekta/android')
+include ':react-native-conekta2'
+project(':react-native-conekta2').projectDir = file('../node_modules/react-native-conekta2/android')
 ```
 
 In `android/app/build.gradle`
@@ -54,7 +54,7 @@ In `android/app/build.gradle`
 dependencies {
     ...
 
-    compile project(':react-native-conekta')
+    compile project(':react-native-conekta2')
 }
 ```
 
