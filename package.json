@@ -15,11 +15,11 @@
     "conekta2"
   ],
   "bugs": {
-    "url": "https://github.com/zo0r/react-native-conekta/issues"
+    "url": "https://github.com/edgarlopez/react-native-conekta/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:zo0r/react-native-conekta.git"
+    "url": "git+ssh://git@github.com:edgarlopez/react-native-conekta.git"
   },
   "peerDependencies": {
     "react-native": ">=0.33"
