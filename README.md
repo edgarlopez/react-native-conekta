@@ -8,13 +8,13 @@
 | **>= 2.0.0**          | **>= 0.50**   | [Open](https://github.com/edgarlopez/react-native-conekta/blob/master/README.md)   |
 
 ## Installation
-`npm install --save react-native-conekta`
+`npm install --save react-native-conekta2`
 
 `react-native link`
 
 ## Usage
 ```javascript
-import conektaApi from 'react-native-conekta';
+import conektaApi from 'react-native-conekta2';
 
 conektaApi.setPublicKey( 'YOUR_PUBLIC_KEY' );
 
