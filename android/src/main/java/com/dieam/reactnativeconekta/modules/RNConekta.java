@@ -16,6 +16,7 @@ import io.conekta.conektasdk.Token;
 
 public class RNConekta extends ReactContextBaseJavaModule {
     Boolean isCollected = false;
+    String publicKey = "";
 
     public RNConekta(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -29,35 +30,42 @@ public class RNConekta extends ReactContextBaseJavaModule {
     @ReactMethod
     public void createToken(ReadableMap info, final Callback successCallback, final Callback failureCallback) {
 
-        String publicKey = info.getString("publicKey");
+        if (publicKey.length() == 0) {
+            failureCallback.invoke(new Error("PublicKey Not set"));
+        } else {
+            Conekta.setPublicKey(publicKey);
 
-        Conekta.setPublicKey(publicKey);
-
-        if ( isCollected ) {
-            isCollected = true;
-            Conekta.collectDevice(getCurrentActivity());
-        }
-
-        String cardNumber = info.getString("cardNumber");
-        String name = info.getString("name");
-        String cvc = info.getString("cvc");
-        String expMonth = info.getString("expMonth");
-        String expYear = info.getString("expYear");
-
-        Card card = new Card(name, cardNumber, cvc, expMonth, expYear);
-        Token token = new Token(getCurrentActivity());
-
-        token.onCreateTokenListener( new Token.CreateToken(){
-            @Override
-            public void onCreateTokenReady(JSONObject data) {
-                try {
-                    successCallback.invoke(data.toString());
-                } catch (Exception err) {
-                    failureCallback.invoke(err.getMessage());
-                }
+            if ( isCollected ) {
+                isCollected = true;
+                Conekta.collectDevice(getCurrentActivity());
             }
-        });
 
-        token.create(card);
+            String cardNumber = info.getString("cardNumber");
+            String name = info.getString("name");
+            String cvc = info.getString("cvc");
+            String expMonth = info.getString("expMonth");
+            String expYear = info.getString("expYear");
+
+            Card card = new Card(name, cardNumber, cvc, expMonth, expYear);
+            Token token = new Token(getCurrentActivity());
+
+            token.onCreateTokenListener( new Token.CreateToken(){
+                @Override
+                public void onCreateTokenReady(JSONObject data) {
+                    try {
+                        successCallback.invoke(data.toString());
+                    } catch (Exception err) {
+                        failureCallback.invoke(err.getMessage());
+                    }
+                }
+            });
+
+            token.create(card);
+        }
+    }
+
+    @ReactMethod
+    public void setPublicKey(final String key) {
+        publicKey = key;
     }
 }

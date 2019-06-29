@@ -15,7 +15,7 @@
 
 ## Usage
 ```javascript
-var conektaApi = new Conekta();
+import conektaApi from 'react-native-conekta';
 
 conektaApi.setPublicKey( 'YOUR_PUBLIC_KEY' );
 
@@ -87,4 +87,3 @@ public class MainApplication extends Application implements ReactApplication {
 }
 
 ```
-
